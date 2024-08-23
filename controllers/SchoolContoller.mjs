@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import { School } from "./../models/createSchool.js";
+import { School } from "../models/createSchool.mjs";
 
 const createSchool = async (req, res) => {
   try {

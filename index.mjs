@@ -1,9 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import createSchoolRoute from './routes/SchoolRoute.js'
-import { connect } from './utils/database.js';
+import createSchoolRoute from './routes/SchoolRoute.mjs'
+import { connect } from './utils/database.mjs';
 import { checkSchema } from 'express-validator';
-import { schoolSchema } from './schema/schoolSchema.js';
+import { schoolSchema } from './schema/schoolSchema.mjs';
 
 const app = express()
 dotenv.config()

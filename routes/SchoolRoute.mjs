@@ -1,5 +1,5 @@
 import express from 'express';
-import { createSchool, listSchool } from '../controllers/SchoolContoller.js';
+import { createSchool, listSchool } from '../controllers/SchoolContoller.mjs';
 
 const router = express.Router();
 router.get('/',(req,res)=>{
