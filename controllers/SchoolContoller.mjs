@@ -27,16 +27,13 @@ const getAllSchool = async (req, res) => {
 };
 
 const listSchool = async (req, res) => {
-    // let api = new ApiFeature(School.find(),req.params).search();
-    // const data = api.query;
-   
-
+  
   try {
     //   // Find schools near the user location and sort by distance
     const userLatitude = parseFloat(req.query.latitude);
     const userLongitude = parseFloat(req.query.longitude);
 
-   
+   console.log('db started')
         const schools = await School.aggregate([
             {
                 $addFields: {
@@ -52,7 +49,7 @@ const listSchool = async (req, res) => {
             },
             { $sort: { distance: 1 } }
         ]);
-
+        console.log('db completed')
         res.status(200).json(schools);
     // }
   }catch (err) {
