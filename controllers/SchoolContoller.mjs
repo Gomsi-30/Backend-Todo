@@ -18,7 +18,9 @@ const createSchool = async (req, res) => {
 
 const getAllSchool = async (req, res) => {
   try {
+    console.log('db started sc')
     const allSchool = await School.find();
+    console.log('db completed sc')
     return res.status(201).send({ success: true, message: allSchool });
   } catch (e) {
     console.error(e);
