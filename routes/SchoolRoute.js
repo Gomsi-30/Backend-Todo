@@ -2,7 +2,10 @@ import express from 'express';
 import { createSchool, listSchool } from '../controllers/SchoolContoller.js';
 
 const router = express.Router();
+route.get('/',(req,res)=>{
+    res.send({msg:'School Mangement website',routes:'/addSchool and /listSchool'})
+})
 router.route('/addSchool').post(createSchool)
 router.route('/listSchool').get(listSchool)
 
-export default router;
+export default router
