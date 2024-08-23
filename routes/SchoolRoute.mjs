@@ -7,5 +7,6 @@ router.get('/',(req,res)=>{
 })
 router.route('/addSchool').post(createSchool)
 router.route('/listSchool').get(listSchool)
+router.route('/getSchools').get(getAllSchool)
 
 export default router

@@ -16,6 +16,16 @@ const createSchool = async (req, res) => {
   }
 };
 
+const getAllSchool = async (req, res) => {
+  try {
+    const allSchool = await School.find();
+    return res.status(201).send({ success: true, message: allSchool });
+  } catch (e) {
+    console.error(e);
+    return res.status(400).send({ success: false });
+  }
+};
+
 const listSchool = async (req, res) => {
     // let api = new ApiFeature(School.find(),req.params).search();
     // const data = api.query;
@@ -50,4 +60,4 @@ const listSchool = async (req, res) => {
   }
 };
 
-export {createSchool,listSchool};
+export {createSchool,listSchool,getAllSchool};
