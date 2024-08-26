@@ -1,11 +1,13 @@
 
 
-class ApiFeature{
-    constructor(query,params){
+export class ApiFeature {
+    constructor(query){
        this.query = query;
-       this.params = params;
     }
-    search(){
-      this.query = this.query.find({params});
+    
+    pagination(page,limit){
+      const skip = (page - 1) * limit; 
+      this.query = this.query.limit(limit).skip(skip); 
+      return this;
     }
 }
